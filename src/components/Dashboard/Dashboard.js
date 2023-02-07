@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 
 const Dashboard = () => {
-  const { _id } = useParams();
-
   const [tShirt, setTshirt] = useState([]);
   console.log("this is tshirt:", tShirt);
 
@@ -15,14 +13,16 @@ const Dashboard = () => {
       .catch((error) => console.log(error));
   }, [tShirt._id]);
 
+  const { _id } = useParams();
   console.log("this is from useparams", _id);
-  const singleTshirt = tShirt.find((s) => s.id === _id);
+  const singleTshirt = tShirt.find((s) => s._id === _id);
   console.log("this is", singleTshirt);
 
   return (
     <div>
-      {/* {singleTshirt?.name} */}
-      this
+      {singleTshirt?.name}
+      <br />
+      {singleTshirt?.price}
       <div class="container my-5">
         <h1 class="text-center">Checkout</h1>
         <form>
@@ -69,7 +69,7 @@ const Dashboard = () => {
               <option>Medium</option>
               <option>Large</option>
               <option>X-Large</option>
-              <option>XX-Large</option>
+              <option>XL-Large</option>
             </select>
           </div>
           <br />

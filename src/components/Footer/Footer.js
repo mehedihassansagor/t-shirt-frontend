@@ -17,7 +17,7 @@ const Footer = () => {
                   <i className="fa fa-envelope"></i> info@tshirtco.com
                 </li>
                 <li>
-                  <i className="fa fa-phone"></i> (555) 555-5555
+                  <i className="fa fa-phone"></i> +880 1856354435
                 </li>
               </ul>
             </div>
@@ -26,17 +26,19 @@ const Footer = () => {
               <ul className="list-inline">
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fa fa-facebook"></i>
+                    <i className="fa fa-facebook"> Facebook</i>
                   </a>
                 </li>
+                <br />
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fa fa-twitter"></i>
+                    <i className="fa fa-twitter">Twiter</i>
                   </a>
                 </li>
+                <br />
                 <li className="list-inline-item">
                   <a href="#">
-                    <i className="fa fa-instagram"></i>
+                    <i className="fa fa-instagram">Instragram</i>
                   </a>
                 </li>
               </ul>
@@ -50,6 +52,7 @@ const Footer = () => {
                     className="form-control"
                     placeholder="Enter your email"
                   />
+                  <br />
                   <button type="submit" className="btn btn-primary">
                     Subscribe
                   </button>

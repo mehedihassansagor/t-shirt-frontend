@@ -24,7 +24,7 @@ const ProductCart = (props) => {
           {/* <Card.Text>{description}</Card.Text> */}
           <Card.Text>{size}</Card.Text>
           <div className="d-grid gap-2 col-6 mx-auto">
-            <Link className="btn btn-primary" to={`/dashboard${_id}`}>
+            <Link className="btn btn-primary" to={`/dashboard/${_id}`}  href="/dashboard">
               BUY
             </Link>
             <button
