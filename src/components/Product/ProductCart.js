@@ -6,7 +6,7 @@ import "./ProductCart.css"
 
 const ProductCart = (props) => {
   console.log(props);
-  const { name, description, _id, size, imageURL } = props.singleTshirt;
+  const { name, description, _id, size, imageURL, price } = props.singleTshirt;
 
   const handleDelete = (id, e) => {
     Axios.delete(`http://localhost:8000/tshirt/${id}`)
@@ -23,6 +23,7 @@ const ProductCart = (props) => {
           <Card.Title>{name}</Card.Title>
           {/* <Card.Text>{description}</Card.Text> */}
           <Card.Text>{size}</Card.Text>
+          <Card.Text className="fw-bold">Price: {price} BDT</Card.Text>
           <div className="d-grid gap-2 col-6 mx-auto">
             <Link className="btn btn-primary" to={`/dashboard/${_id}`}  href="/dashboard">
               BUY
