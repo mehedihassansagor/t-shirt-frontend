@@ -5,6 +5,22 @@ import Axios from "axios";
 import { useForm } from "react-hook-form";
 
 const Dashboard = () => {
+  //PHONE NO VALIDATION
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handlePhoneNumberChange = (event) => {
+    const value = event.target.value;
+    console.log(value);
+
+    if (value.length < 7 || value.length > 15) {
+      setErrorMessage("Phone number must be between 10 and 15 characters long");
+    } else {
+      setErrorMessage("please");
+    }
+
+    setPhoneNumber(value);
+  };
   //useform
   const {
     register,
@@ -112,14 +128,37 @@ const Dashboard = () => {
             <div className="form-group">
               <label htmlFor="address">Phone:</label>
               <input
+                type="tel"
+                value={phoneNumber}
                 required="true"
-                type="text"
                 className="form-control"
                 id="phone"
                 name="phone"
                 {...register("phone")}
+                minlength="10"
+                maxlength="13"
               />
             </div>
+            {/* <div className="form-group">
+              <label htmlFor="phoneNumber">Phone:</label>
+              <input
+                type="tel"
+                value={phoneNumber}
+                onChange={handlePhoneNumberChange}
+                placeholder="Enter phone number"
+                // minlength="10"
+                // maxlength="13"
+                required="true"
+                className="form-control"
+                id="phone"
+                aria-describedby="phoneHelp"
+                {...register("phone")}
+              />
+              <div className="text-danger" style={{display:"none"}}>
+                {errorMessage}
+              </div>
+            </div> */}
+
             <div className="form-group">
               <label htmlFor="address">Address:</label>
               <input
@@ -254,6 +293,8 @@ const Dashboard = () => {
             {/* payment part finish */}
             <br />
             <button
+              // onChange={handlePhoneNumberChange}
+              // onSubmit={handlePhoneNumberChange}
               type="submit"
               className="btn btn-primary fw-bold form-control my-1"
             >
