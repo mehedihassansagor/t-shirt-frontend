@@ -8,6 +8,7 @@ import Contactus from "./components/Contactus/Contactus";
 import Navbar from "./components/Navbar/Navbar";
 import UploadProduct from "./components/Product/uploadProduct";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Payment from './components/Payment/Payment';
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +23,7 @@ function App() {
         <Route path="/order" element={<Order />}></Route>
         <Route path="/dashboard/:_id" element={<Dashboard />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/payment" element={<Payment />}></Route>
       </Routes>
     </BrowserRouter>
   );

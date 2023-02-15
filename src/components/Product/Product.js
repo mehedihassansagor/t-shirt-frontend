@@ -11,12 +11,12 @@ const Product = () => {
     Axios.get("http://localhost:8000/tshirt")
       .then((res) =>setTshirt(res.data))
       .catch((error) => console.log(error));
-  }, []);
+  }, [tshirt._id]);
   return (
     <>
       <div className="grid">
       {
-        tshirt.map((singleTshirt)=> <ProductCart singleTshirt={singleTshirt} />)
+        tshirt.map((singleTshirt)=> <ProductCart key={singleTshirt.id} singleTshirt={singleTshirt} />)
       }
         
       </div>
