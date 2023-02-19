@@ -8,7 +8,8 @@ import Contactus from "./components/Contactus/Contactus";
 import Navbar from "./components/Navbar/Navbar";
 import UploadProduct from "./components/Product/uploadProduct";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Payment from './components/Payment/Payment';
+import Payment from "./components/Payment/Payment";
+import RegisterPage from "./components/RegisterPage/RegisterPage";
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/dashboard/:_id" element={<Dashboard />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/payment" element={<Payment />}></Route>
+        <Route path="/registerPage" element={<RegisterPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
