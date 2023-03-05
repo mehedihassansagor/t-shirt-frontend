@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import imagePic from "../images/paymentPicture1.png"
 import { useForm } from "react-hook-form";
 
 const Dashboard = () => {
@@ -88,7 +89,9 @@ const Dashboard = () => {
           <h3>Product Details:</h3>
           <div className="card mb-3">
             <img
-              src={singleTshirt?.imageURL}
+            
+              src={singleTshirt?.imageURL}  
+              
               style={{ width: "55%" }}
               className="card-img-top rounded mx-auto img-thumbnail"
               alt="T-Shirt"

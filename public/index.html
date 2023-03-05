@@ -19,7 +19,22 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>React App</title>
+    <title>t-shirt</title>
+
+    <!-- styel -->
+
+    <style>
+      body {
+        padding: 25px;
+        background-color: white;
+        color: black;
+      }
+
+      .dark-mode {
+        background-color: #141227;
+        color: white;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -30,6 +45,14 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    
+
+    <script>
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+      }
+    </script>
+    <!-- <button type="button" className="btn btn-outline-dark"onclick="myFunction()">Toggle dark mode</button> -->
+    <button onclick="myFunction()" type="button" class="btn btn-outline-dark">Dark</button>
   </body>
 </html>

@@ -6,7 +6,7 @@ import "./ProductCart.css"
 
 const ProductCart = (props) => {
   console.log(props);
-  const { name, description, _id, size, imageURL, price } = props.singleTshirt;
+  const { name, _id, size, imageURL, price } = props.singleTshirt;
 
   const handleDelete = (id, e) => {
     Axios.delete(`http://localhost:8000/tshirt/${id}`)
