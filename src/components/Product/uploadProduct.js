@@ -24,7 +24,7 @@ const UploadProduct = () => {
       .catch((error) => {
         console.log(error);
       });
-    window.location.reload();
+    // window.location.reload();
   };
 
   const handleImageUpload = (e) => {

@@ -12,7 +12,7 @@ const ProductCart = (props) => {
     Axios.delete(`http://localhost:8000/tshirt/${id}`)
       .then((res) => console.log("delete"))
       .catch((error) => console.log(error));
-    window.location.reload();
+    // window.location.reload();
   };
 
   return (

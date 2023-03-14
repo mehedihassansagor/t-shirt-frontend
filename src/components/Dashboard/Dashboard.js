@@ -2,26 +2,25 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import imagePic from "../images/paymentPicture1.png"
 import { useForm } from "react-hook-form";
 
 const Dashboard = () => {
   //PHONE NO VALIDATION
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  // const [phoneNumber, setPhoneNumber] = useState("");
+  // const [errorMessage, setErrorMessage] = useState("");
 
-  const handlePhoneNumberChange = (event) => {
-    const value = event.target.value;
-    console.log(value);
+  // const handlePhoneNumberChange = (event) => {
+  //   const value = event.target.value;
+  //   console.log(value);
 
-    if (value.length < 7 || value.length > 15) {
-      setErrorMessage("Phone number must be between 10 and 15 characters long");
-    } else {
-      setErrorMessage("please");
-    }
+  //   if (value.length < 7 || value.length > 15) {
+  //     setErrorMessage("Phone number must be between 10 and 15 characters long");
+  //   } else {
+  //     setErrorMessage("please");
+  //   }
 
-    setPhoneNumber(value);
-  };
+  //   setPhoneNumber(value);
+  // };
   //useform
   const {
     register,
@@ -132,7 +131,6 @@ const Dashboard = () => {
               <label htmlFor="address">Phone:</label>
               <input
                 type="tel"
-                value={phoneNumber}
                 required="true"
                 className="form-control"
                 id="phone"
