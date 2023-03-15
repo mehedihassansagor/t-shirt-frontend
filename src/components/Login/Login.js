@@ -1,33 +1,47 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 
 // firebase
 import firebase from "firebase/app";
 
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import app from './../Firebase/Firebase.init';
-const auth = getAuth(app)
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
+import app from "./../Firebase/Firebase.init";
+const auth = getAuth(app);
 
 // if (!firebase.apps.length) {
 //   firebase.initializeApp(firebaseConfig);
 // }
 
 const Login = () => {
-  const [loggedinUser, setLoggedinUser] = useState({})
-console.log("itsis", loggedinUser);
-  const provider =  new GoogleAuthProvider();
+  const [loggedinUser, setLoggedinUser] = useState({});
+  const provider = new GoogleAuthProvider();
 
-  const handleGoohleLogin = () =>{
+  const handleGoohleLogin = () => {
     signInWithPopup(auth, provider)
-    .then((result) => {
-      const user = result.user;
-      setLoggedinUser(user);
-      
-      // ...
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
+      .then((result) => {
+        const user = result.user;
+        setLoggedinUser(user);
 
+        // ...
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGoohleLogOut = () => {
+    signOut(auth)
+      .then(() => {
+        setLoggedinUser({});
+      })
+      .catch(() => {
+        setLoggedinUser({});
+      });
+  };
   return (
     <>
       <div className="container my-5">
@@ -55,13 +69,22 @@ console.log("itsis", loggedinUser);
               placeholder="Password"
             />
           </div>
+          <div>name:{loggedinUser.displayName}</div>
           <br />
           <br />
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
           <br />
-          <div className="btn btn-primary" onClick={handleGoohleLogin}>google signin</div>
+          {loggedinUser.email ? (
+            <div className="btn btn-danger" onClick={handleGoohleLogOut}>
+              google signOut
+            </div>
+          ) : (
+            <div className="btn btn-primary" onClick={handleGoohleLogin}>
+              google signin
+            </div>
+          )}
         </form>
       </div>
     </>

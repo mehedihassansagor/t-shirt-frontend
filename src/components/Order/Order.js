@@ -37,8 +37,10 @@ const Order = () => {
             </tr>
           </thead>
           <tbody>
-            {order.map((order) => (
-              <tr>
+            {order.map((order) =>  (
+              
+              <tr 
+              key = {order._id}>
                 <td>{order.name}</td>
                 <td>{order.productName}</td>
                 <td>{order.address}</td>

@@ -136,8 +136,8 @@ const Dashboard = () => {
                 id="phone"
                 name="phone"
                 {...register("phone")}
-                minlength="10"
-                maxlength="13"
+                minLength="10"
+                maxLength="13"
               />
             </div>
             {/* <div className="form-group">

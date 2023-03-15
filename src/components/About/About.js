@@ -1,6 +1,9 @@
-import React from "react";
+import {useContext, React} from "react";
+import { UserContext } from './../../App';
 
 const About = () => {
+  const [loggedinUser, setLoggedinUser] = useContext(UserContext);
+  console.log("this is from about", loggedinUser)
   return (
     <div>
       <div className="container my-5">

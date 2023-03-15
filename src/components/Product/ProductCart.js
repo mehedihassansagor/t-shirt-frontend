@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./ProductCart.css"
 
 const ProductCart = (props) => {
-  console.log(props);
   const { name, _id, size, imageURL, price } = props.singleTshirt;
 
   const handleDelete = (id, e) => {

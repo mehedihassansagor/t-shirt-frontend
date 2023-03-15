@@ -1,13 +1,17 @@
 import React from "react";
+import { useContext } from "react";
 import {Link} from "react-router-dom"
+import { UserContext } from './../../App';
 
 const Navbar = () => {
+  const [loggedinUser, setLoggedinUser] = useContext(UserContext);
+  console.log("this is from nav", loggedinUser)
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to = "/">
-            <b>T-SHIRT</b>
+            <div>T-SHIRT</div>
           </Link>
           <button
             className="navbar-toggler"
@@ -24,51 +28,46 @@ const Navbar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link active" to = "">
-                 <b>Home</b> 
+                 <div>Home</div> 
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" to = "/about">
-                  <b>About</b>
+                  <div>About</div>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" to = "/order">
-                  <b>Order</b>
+                  <div>Order</div>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" to = "/contact">
-                  <b>Contact</b>
+                  <div>Contact</div>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" to = "/login">
-                 <b>LogIn</b>
+                 <div>LogIn</div>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" to = "/uploadproduct">
-                 <b>Upload</b>
+                 <div>Upload</div>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link active" to = "/dashboard">
-                <b>Dashboard</b>
+                <div>Dashboard</div>
                 </Link>
               </li>
             </ul>
-            <form className="d-flex">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            <li className="nav-item">
+                <div>
+                  <p>{loggedinUser.email}</p>
+                  <p>{loggedinUser.displayName}</p>
+                </div>
+              </li>
           </div>
         </div>
       </nav>
