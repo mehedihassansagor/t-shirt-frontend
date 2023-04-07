@@ -75,17 +75,19 @@ const Login = () => {
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
-          <br />
-          {loggedinUser.email ? (
-            <div className="btn btn-danger" onClick={handleGoohleLogOut}>
-              google signOut
-            </div>
-          ) : (
-            <div className="btn btn-primary" onClick={handleGoohleLogin}>
-              google signin
-            </div>
-          )}
         </form>
+        <br />
+        <br />
+        <hr />
+        {loggedinUser.email ? (
+          <div className="btn btn-danger" onClick={handleGoohleLogOut}>
+            google signOut
+          </div>
+        ) : (
+          <div className="btn btn-primary" onClick={handleGoohleLogin}>
+            google signin
+          </div>
+        )}
       </div>
     </>
   );

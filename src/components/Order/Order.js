@@ -15,10 +15,10 @@ const Order = () => {
   }, []);
   //delete
   const handleDelete = (_id) => {
-    Axios.delete(`http://localhost:8000/order${_id}`)
+    Axios.delete(`http://localhost:8000/order/${_id}`)
       .then((res) => console.log("delete"))
       .catch((error) => console.log(error));
-    // window.location.reload();
+    window.location.reload();
     console.log("delete clicked");
   };
   return (
